@@ -1,7 +1,7 @@
 name: Clean packages
 on:
   registry_package:
-    types: [updated]
+    types: [published]
 
 jobs:
   build:
