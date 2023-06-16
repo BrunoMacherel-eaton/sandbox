@@ -9,4 +9,10 @@ jobs:
 
     steps:
       - name: Run a one-line script
-        run: echo -${{ github.event.registry_package.registry.name }}- -${{ github.event.registry_package.registry.type }}-
+        run: echo -${{ github.event.registry_package.package_version.summary }}- -${{ github.event.registry_package.package_version.name }}- -${{ github.event.registry_package.package_version.summary }}-
+
+#      - name: Clean
+#        uses: actions/delete-package-versions@v4
+#        with:
+#          package-type: maven
+#          ignore-versions: '^((?!SNAPSHOT).)*$'
