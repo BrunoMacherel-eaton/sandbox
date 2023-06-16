@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - name: Run a one-line script
-        run: echo ${{ github.event.registry_package.registry.name }} ${{ github.event.registry_package.registry.type }}
+        run: echo -${{ github.event.registry_package.registry.name }}- -${{ github.event.registry_package.registry.type }}-
