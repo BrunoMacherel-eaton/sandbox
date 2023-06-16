@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Run a one-line script
-        run: echo ${{ github.event.registry_package.name }} ${{ github.event.registry_package.namespace }} ${{ github.event.registry_package.package_type }}
+        run: echo ${{ github.event.registry_package.registry.name }} ${{ github.event.registry_package.registry.type }}
 
       - name: Delete old snapshots
         uses: joshdk/github-packages-delete@v3.3.0
