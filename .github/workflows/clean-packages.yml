@@ -10,13 +10,3 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo ${{ github.event.registry_package.registry.name }} ${{ github.event.registry_package.registry.type }}
-
-      - name: Delete old snapshots
-        uses: joshdk/github-packages-delete@v3.3.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.event.registry_package.namespace }}
-          keep: 5 # Change this number to the number of latest snapshots you want to keep
-          package-type: ${{ github.event.registry_package.package_type }}
-          package-name: ${{ github.event.registry_package.name }}
-          package-version: SNAPSHOT
